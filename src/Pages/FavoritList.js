@@ -2,11 +2,17 @@ import { MyList } from "../component/Context"
 import { useContext } from 'react';
 import Icons2 from "../component/FavoriteIcon2"
 import { Link, useNavigate } from "react-router-dom";
+import {BsFillSuitHeartFill} from "react-icons/bs"
+
 
 const FavoriteList=()=>{
     const [list,setList]=useContext(MyList)
+    
     const navigate=useNavigate()
     
+    const deleteItem = (index) => () =>
+    setList((items) => items.filter((_, i) => i !== index));
+
     return(
         <div>
 
@@ -26,17 +32,17 @@ const FavoriteList=()=>{
 
             <div className="flex w-auto h-full flex-wrap flex-row  justify-around items-between">
                 <p className="flex justify-center m-10 text-2xl font-bold">Your Favorite Poem </p>
-            <div className="flex-row w-[100%] flex-wrap justify-start justify-items-start justify-self-start grid grid-cols-5 gap-4">
+            <div className="flex-row w-[90%] flex-wrap justify-start justify-items-start justify-self-start grid grid-cols-5 gap-4">
             
           {list.map((item,index)=>{
             return(
-                <div key={index} className="flex flex-col w-[240px] h-[140px] justify-center bg-blue-50 rounded-xl m-20 flex-wrap ">
+                <div key={index} className="flex flex-col w-[240px] h-[140px] justify-center bg-blue-50 rounded-xl m-10 flex-wrap ">
                 <Link to={`/Details/${item.author}`} state={{ props: item }} >
                   <p className="text-xl font-bold m-2">{item.author.substring(0,16)} </p>
                   <p className="text-md    m-2">{item.title.substring(0,20)} </p>
                   </Link>
-                  <Icons2  title={item.title} author={item.author} lines={item.lines} />
-
+                  <Icons2 index={index} title={item.title} author={item.author} lines={item.lines} />
+                  {/* <button onClick={deleteItem(index)} > <BsFillSuitHeartFill/>  Delete</button> */}
                   </div>
 
             )
