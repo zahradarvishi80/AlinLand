@@ -10,8 +10,8 @@ const FavoriteList=()=>{
     
     const navigate=useNavigate()
     
-    const deleteItem = (index) => () =>
-    setList((items) => items.filter((_, i) => i !== index));
+    // const deleteItem = (index) => () =>
+    // setList((items) => items.filter((_, i) => i !== index));
 
     return(
         <div>

@@ -8,16 +8,29 @@ const[read,setRead]=useState(0)
 const location=useLocation()
     return(
         <div
-        className="flex w-[100%]  bg-blue-50  h-full flex-col justify-start items-start"
+        className="flex w-[100%] h-full bg-blue-50  h-full flex-col content-around items-center justify-around justify-items-center justify-self-center"
         >
-            <div className="flex flex-col m-5">
-           <p className="flex text-xl text-black font-bold m-2">
+            <div className="flex flex-row w-[100%] h-32  content-around items-center justify-around justify-items-center justify-self-center m-20">
+           <p className="flex text-2xl text-black font-bold m-2">
           Author:  {location.state.props.author}
            </p>
-           <p className="flex text-xl text-black font-bold m-2">
+           <img src="https://uploads-ssl.webflow.com/61e60131d76cdc84804f0cc3/61e60131d76cdcc14d4f0cfe_Illustration.png" 
+        alt="topblog"
+        // onClick={()=>FetchPoems()} 
+          className="flex w-48 h-48 mb-20 hover:w-52 hover:h-52 hover:border-2 hover:border-blue-100 rounded-full"
+        />
+           <p className="flex text-2xl text-black font-bold m-2">
         title: {location.state.props.title}
-           </p>
-           {
+           </p>  </div>
+           {/* */}
+        <div className="flex w-[100%] h-full bg-blue-50 content-around  justify-around justify-items-center justify-self-center ">
+        <p className="flex w-[80%]" >
+           {location.state.props.lines}
+           </p> 
+        </div>
+
+
+           {/* {
             read===0?(
                 <> 
                 <button onClick={()=>setRead(1)} className="flex m-5 hover:text-xl">reading</button>
@@ -47,9 +60,9 @@ const location=useLocation()
                 </div>
                  
             )
-           }
+           } */}
            
-           </div>
+         
          
       
            
