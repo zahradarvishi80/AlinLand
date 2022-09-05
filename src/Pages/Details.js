@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom"
 
 
 const Details=()=>{
-const[read,setRead]=useState(0)
 const location=useLocation()
     return(
         <div
