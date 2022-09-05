@@ -11,20 +11,24 @@ const location=useLocation()
         className="flex w-[100%] h-full bg-blue-50  h-full flex-col content-around items-center justify-around justify-items-center justify-self-center"
         >
             <div className="flex flex-row w-[100%] h-32  content-around items-center justify-around justify-items-center justify-self-center m-20">
+         <div>
            <p className="flex text-2xl text-black font-bold m-2">
           Author:  {location.state.props.author}
-           </p>
+           </p></div>
+           <div>
            <img src="https://uploads-ssl.webflow.com/61e60131d76cdc84804f0cc3/61e60131d76cdcc14d4f0cfe_Illustration.png" 
         alt="topblog"
         // onClick={()=>FetchPoems()} 
           className="flex w-48 h-48 mb-20 hover:w-52 hover:h-52 hover:border-2 hover:border-blue-100 rounded-full"
-        />
+        /></div>
+        <div className="flex w-[350px] h-32 mt-9">
            <p className="flex text-2xl text-black font-bold m-2">
         title: {location.state.props.title}
-           </p>  </div>
+           </p> </div> 
+           </div>
            {/* */}
         <div className="flex w-[100%] h-full bg-blue-50 content-around  justify-around justify-items-center justify-self-center ">
-        <p className="flex w-[80%]" >
+        <p className="flex w-[60%]" >
            {location.state.props.lines}
            </p> 
         </div>
