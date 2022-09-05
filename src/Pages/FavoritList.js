@@ -5,28 +5,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 const FavoriteList=()=>{
     const [list,setList]=useContext(MyList)
-
     const navigate=useNavigate()
-
-    const Deleteitem=({title,author,lines})=>{
-        let temp=[...list]
-        const items={title,author,lines}
-        temp.pop(items)
-        setList([...temp])
-    }
     
     return(
         <div>
 
-{
-        list.length===0?(
-            <div className="flex flex-col justify-center items-center justify-items-center">
+        {list.length===0?(
+          <div className="flex flex-col justify-center items-center justify-items-center">
           <p className="flex justify-center m-10 text-2xl font-bold">You haven't chosen your favorite poem yet</p>
           <img src="https://uploads-ssl.webflow.com/61e60131d76cdc84804f0cc3/61e60131d76cdcc14d4f0cfe_Illustration.png" 
-        alt="topblog"
-        onClick={()=>
-        navigate("/")
-        } 
+         alt="topblog"
+         onClick={()=>
+         navigate("/")
+         } 
           className="flex w-48 h-48 mb-20 justify-center items-center hover:w-52 hover:h-52 hover:border-2 hover:border-blue-100 rounded-full"
         />
         <p className="flex justify-center text-xl font-bold">choose your favorite poems</p>

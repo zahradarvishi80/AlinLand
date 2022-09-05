@@ -1,19 +1,17 @@
-import { MyList } from "../component/Context"
+
 import {  useNavigate } from "react-router-dom";
-import {  useState,useContext } from 'react';
+import {  useState } from 'react';
 import Imgpoem from '../component/ImagesPoems';
 import {IoMdArrowDropdown} from "react-icons/io";
 import {MdArrowDropUp} from "react-icons/md"
-// import Icons from "../component/FavoriteIcone";
 import PoemsList from "../component/PoemsList";
 const Home=()=>{
   const [poems,setPoems]=useState([])
   const[click,setClick]=useState(0)
-  // const [list,setList]=useContext(MyList)
   const navigate=useNavigate()
 
 
-  // console.log(list);
+
     const FetchPoems=async ()=>{
       console.log("ok");
     try{
@@ -21,7 +19,6 @@ const Home=()=>{
       .then(response => response.json() )
       .then(data=>{
         setPoems(data)
-        // console.log("data",data)
       })      
     }catch (error){
     console.log(error);
@@ -36,16 +33,6 @@ const Home=()=>{
   }
 
 
-
-
-
-
-
-
-
-
-
-
   const SortAuthor=()=>{
     const auth=[...poems]
     auth.sort((a,b)=>{
@@ -53,7 +40,6 @@ const Home=()=>{
       return a.author - b.author
     })
     setPoems(auth)
-    // console.log("...",poems);
   }
 
 
@@ -93,9 +79,6 @@ const Home=()=>{
           )
         }
 
-        {/* <>
-        
-        </> */}
     </div>
   )
       }
